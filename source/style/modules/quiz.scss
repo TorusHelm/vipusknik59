@@ -1,0 +1,90 @@
+.quiz {
+  padding-top: 32px;
+
+  &__header {
+    margin-bottom: -32px;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+  }
+
+  &__step {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    background-color: $border-case2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex: 0 0 auto;
+
+    @include respondTo(max-md) {
+      height: 48px;
+      width: 48px;
+    }
+
+    .title {
+      font-weight: 600;
+    }
+
+    &.is-active {
+      background-color: $primary;
+
+      ~ .quiz__step {
+        pointer-events: none;
+      }
+
+      .title {
+        color: $clean;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: 140px;
+
+      @include respondTo(max-md) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__content {
+    border-radius: 32px;
+    background-color: $clean;
+    box-shadow: 0 15px 40px rgba(#000000, 0.1);
+    padding: 64px 32px 32px;
+
+    @include respondTo(max-md) {
+      padding: 48px 24px 24px;
+    }
+  }
+
+  &__pretitle {
+    font-size: 16px;
+    line-height: 19px;
+    color: $secondary-case3;
+    margin-bottom: 16px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+
+    @include respondTo(max-md) {
+      padding: 10px;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    svg {
+      flex: 0 0 auto;
+      margin-left: 16px;
+
+      @include respondTo(max-md) {
+        display: none;
+      }
+    }
+  }
+}

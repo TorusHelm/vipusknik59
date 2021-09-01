@@ -1,0 +1,85 @@
+extends ../_template
+block variables
+	- let title = 'AR альбомы'
+
+block content
+	include ../components/input/input-number
+	include ../components/checkmark/checkmark
+	include ../modules/card/card
+	main
+		article.container.space-article.pt-0
+			.row
+				.col
+					.main-slider__wrapper
+						.swiper-container.main-slider.js-main-banner-swiper-container
+							.swiper-wrapper
+								-
+									let length = 0;
+
+								while length < 2
+									.swiper-slide.main-slider__slide(data-slider=length++)
+										picture.main-slider__slide-bg
+											img(src=`img/main-banner/main-banner${length - 1}.jpg` alt="")
+										.row
+											.col-xl-10
+												h2.main-slider__title.title Скидки на альбомы
+												.main-slider__desc % <strong>вашей скидки</strong> = количеству альбомов в заказе*
+													span.text-body
+														br/
+														br/ максимальный размер скидки 20%, цена автоматически
+														br/ формируется в корзине
+							.swiper-pagination
+						.swiper-button-prev.main-slider__btn.js-swiper-main-prev
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+						.swiper-button-next.main-slider__btn.js-swiper-main-next
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+		article.container.space-article.pt-0
+			.ar-page-video
+				.ar-page-video__bg
+				.ar-page-video__title.space-title
+					h2.title Посмотри как&nbsp;это&nbsp;работает
+				.ar-page-video__preview.js-modal-init.js-modal-init-video(data-target="#video")
+					video(autoplay muted loop)#ar-page-video
+						source(src="img/ar-page-video.mp4" type="video/mp4")
+					.ar-page-video__preview-play
+						svg(xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22")
+							path(d="M9.293,2.793a2,2,0,0,1,3.413,0L20.14,14.957A2,2,0,0,1,18.434,18H3.566A2,2,0,0,1,1.86,14.957Z" transform="translate(18) rotate(90)" fill="#fa0")
+				.ar-page-video__price
+					.ar-page-video__price-content
+						h3.text_semibold.mb-1 Стоимость AR альбома
+						h4.subtitle_semibold 2 500 ₽
+					.ar-page-video__price-btn
+						button.btn.btn_warning.btn_fixed Заказать
+
+		include ../modules/albums-for
+
+		include ../modules/design-variants
+
+		include ../modules/album-price
+
+		include ../modules/price-include
+
+		include ../modules/album-addings
+
+		include ../modules/get-price
+
+		include ../modules/why-us
+
+		include ../modules/examples-album
+
+		include ../modules/prefooter
+
+		+modal('video')(data-slider="true").js-modal-video-container
+			.container
+				.row.justify-content-center
+					.col-12.col-xl-10
+						.modal-container.modal-container_no-space.modal-container_no-bg
+							.modal__close.js-modal-close
+								+svg-use('close-modal')
+							.main-slider__wrapper.ar-page-video__preview
+								video(controls).js-modal-video
+									source(src="img/ar-page-video.mp4" type="video/mp4")
+								.ar-page-video__preview-play.js-modal-video-play
+									svg(xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22")
+										path(d="M9.293,2.793a2,2,0,0,1,3.413,0L20.14,14.957A2,2,0,0,1,18.434,18H3.566A2,2,0,0,1,1.86,14.957Z" transform="translate(18) rotate(90)" fill="#fa0")

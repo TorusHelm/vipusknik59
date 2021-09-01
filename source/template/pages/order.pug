@@ -1,0 +1,95 @@
+extends ../_template
+block variables
+	- let title = 'Оформление заказа'
+
+block content
+	include ../components/input/input-number
+	include ../components/checkmark/checkmark
+	include ../modules/card/card
+	main
+		article.container.space-article
+			h1.title.space-title-lg Оформление заказа
+			.row
+				.col-xl-8
+					.sheet.sheet_shadow.mb-4
+						h3.subtitle.subtitle_semibold.mb-2 1. Загрузить
+						p.text.text_secondary.mb-3 Для заказа открытки вам необходимо загрузить фото и видео, которые <br class="d-none d-xl-block">увидит получатель открытки
+						.row
+							.col-sm-6
+								div(style="height: 120px; border: 1px dashed #d9d9d9; border-radius: 4px;")
+							.col-sm-6
+								div(style="height: 120px; border: 1px dashed #d9d9d9; border-radius: 4px;")
+
+					.sheet.sheet_shadow.mb-4
+						h3.subtitle.subtitle_semibold.mb-3 2. Конатктные данные
+						.row
+							.col-md-6
+								+input({
+									caption: 'Представьтесь, пожалуйста',
+									type: 'text',
+									value: '',
+									postfix: '',
+									placeholder: 'Ваше имя и фамилия',
+									name: 'name',
+									require: true
+								})
+							.col-md-6.mt-2.mt-md-0
+								+input({
+									caption: 'Ваш E-mail',
+									type: 'email',
+									value: '',
+									postfix: '',
+									placeholder: 'example@gmail.com',
+									name: 'name',
+									require: true
+								})
+							.col-md-6.mt-2
+								+input({
+									caption: 'Телефон',
+									type: 'tel',
+									value: '',
+									postfix: '',
+									placeholder: '+7 919 7112 900',
+									name: 'phone',
+									require: true
+								})
+						.row.no-gutters.mt-3
+							.col-12
+								.caption.mb-0 Куда доставить?
+							.col-12.mt-2
+								+checkmark({
+									radio: "deliveryType",
+									text: "Самовывоз",
+									checked: "checked"
+								})
+							.col-12.mt-2
+								+checkmark({
+									radio: "deliveryType",
+									text: "Доставка на дом или офис"
+								})
+							.col-12.mt-2
+								+checkmark({
+									radio: "deliveryType",
+									text: "Доставка до пункта выдачи Boxberry"
+								})
+
+					.sheet.sheet_shadow
+						h3.subtitle.subtitle_semibold.mb-3 3. Оплата
+						.row.no-gutters.mt-3
+							.col-12
+								.caption.mb-0 Способы оплаты
+							.col-12.mt-2
+								+checkmark({
+									radio: "payType",
+									text: "Оплатить онлайн",
+									checked: "checked"
+								})
+							.col-12.mt-2
+								+checkmark({
+									radio: "payType",
+									text: "Оплатить при получении заказа"
+								})
+
+				.col-xl-4
+					.sheet.sheet_shadow
+						h3.subtitle.subtitle_semibold.mb-3 Ваш заказ

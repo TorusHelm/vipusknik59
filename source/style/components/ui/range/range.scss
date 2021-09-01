@@ -1,0 +1,49 @@
+.range {
+    height: 2px;
+    background-color: $border-case2;
+    border: 0;
+
+    .noUi-connects {
+        border-radius: 0;
+    }
+
+    .noUi-connect {
+        background-color: $warning;
+    }
+
+    .noUi-handle {
+        height: 16px;
+        width: 16px;
+        background-color: $warning;
+        border-radius: 50%;
+        box-shadow: none;
+        border: 0;
+        outline: none;
+        box-shadow: 0 4px 12px rgba($dark, 0.16);
+        transform: translateX(-50%);
+
+        &:before, &:after {
+            display: none;
+        }
+    }
+
+    .noUi-tooltip {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: bold;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        bottom: 15px;
+        transform: translate(-50%, -100%);
+    }
+
+    .noUi-value {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 500;
+        color: $subtitle;
+        top: 8px;
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,85 @@
+.how-it-works-block {
+  counter-reset: section;
+  position: relative;
+  height: 480px;
+  padding-left: 64px;
+  padding-top: 80px;
+
+  @include respondTo(max-sm) {
+    padding: 40px 12px;
+    height: auto;
+  }
+
+  &__bg {
+    background-color: $ocean;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-position: right;
+      object-fit: cover;
+
+      @include respondTo(max-md) {
+        object-position: center;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+    color: $clean;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    li {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-left: 56px;
+      position: relative;
+      color: $clean;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+
+      &:not(:last-of-type) {
+        margin-bottom: 24px;
+      }
+
+      .row {
+        flex: 0 0 100%;
+      }
+
+      &:before {
+        counter-increment: section;
+        content: counter(section);
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $clean;
+        color: $ocean;
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: bold;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

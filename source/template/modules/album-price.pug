@@ -1,0 +1,250 @@
+article.container.space-article.pt-0
+    h2.title.space-title Сколько стоит выпускной альбом?
+    .row.js-tab-container.tab.tab_main-page
+        .col-12
+            ul.tab-list
+                li.tab-list__item.js-tab-menu-item.is-active(data-target="#price0")
+                    h4.tab-list__title AR обложка
+                li.tab-list__item.js-tab-menu-item(data-target="#price1")
+                    h4.tab-list__title Индивидуальная обложка
+
+        .col-12
+            .tab__content.is-active#price0
+                .swiper-container.js-only-mobile-slider
+                    .swiper-wrapper.row.main-page-cardset
+                        .col-xl-4.swiper-slide
+                            .price-card
+                                .price-card__header
+                                    img(src="img/album-minimal.svg")
+                                    h4.subtitle.subtitle_secondary Минимальный
+                                .price-card__desc
+                                    p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+                                    ul.list
+                                        li.list__item <strong>4 чел. на разворот</strong>
+                                        li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+                                .price-card__settings
+                                    +input-number({
+                                      caption: "Количество выпускников"
+                                    }).mb-2
+                                    p.caption Формат альбома
+                                    .row
+                                        .col-12.col-md-auto
+                                            +checkmark({
+                                              radio: "albumFormat0",
+                                              text: "20х30",
+                                              checked: "checked"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat0",
+                                              text: "30х20"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat0",
+                                              text: "27х27"
+                                            })
+                                .price-card__footer
+                                    p.text.mb-2 24 страницы в альбоме
+                                    p.caption Стоимость альбома
+                                    h4.title.title_price.mb-3 1 200
+                                    a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+                        .col-xl-4.swiper-slide
+                            .price-card
+                                .price-card__header
+                                    img(src="img/album-optimal.svg")
+                                    h4.subtitle.subtitle_secondary Оптимальный
+                                .price-card__desc
+                                    p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+                                    ul.list
+                                        li.list__item <strong>2 чел. на разворот</strong>
+                                        li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+                                .price-card__settings
+                                    +input-number({
+                                      caption: "Количество выпускников"
+                                    }).mb-2
+                                    p.caption Формат альбома
+                                    .row
+                                        .col-12.col-md-auto
+                                            +checkmark({
+                                              radio: "albumFormat1",
+                                              text: "20х30",
+                                              checked: "checked"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat1",
+                                              text: "30х20"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat1",
+                                              text: "27х27"
+                                            })
+                                .price-card__footer
+                                    p.text.mb-2 24 страницы в альбоме
+                                    p.caption Стоимость альбома
+                                    h4.title.title_price.mb-3 1 200
+                                    a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+                        .col-xl-4.swiper-slide
+                            .price-card
+                                .price-card__header
+                                    img(src="img/album-maximal.svg")
+                                    h4.subtitle.subtitle_secondary Максимальный
+                                .price-card__desc
+                                    p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+                                    ul.list
+                                        li.list__item <strong>1 чел. на разворот</strong>
+                                        li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+                                .price-card__settings
+                                    +input-number({
+                                      caption: "Количество выпускников"
+                                    }).mb-2
+                                    p.caption Формат альбома
+                                    .row
+                                        .col-12.col-md-auto
+                                            +checkmark({
+                                              radio: "albumFormat2",
+                                              text: "20х30",
+                                              checked: "checked"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat2",
+                                              text: "30х20"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat2",
+                                              text: "27х27"
+                                            })
+                                .price-card__footer
+                                    p.text.mb-2 24 страницы в альбоме
+                                    p.caption Стоимость альбома
+                                    h4.title.title_price.mb-3 1 200
+                                    a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+
+                    .main-page-cardset__btn.swiper-button-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .main-page-cardset__btn.swiper-button-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+            .tab__content#price1
+                .swiper-container.js-only-mobile-slider
+                    .swiper-wrapper.row.main-page-cardset
+                        .col-xl-4.swiper-slide
+                            .price-card
+                                .price-card__header
+                                    img(src="img/album-minimal.svg")
+                                    h4.subtitle.subtitle_secondary Минимальный
+                                .price-card__desc
+                                    p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+                                    ul.list
+                                        li.list__item <strong>4 чел. на разворот</strong>
+                                        li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+                                .price-card__settings
+                                    +input-number({
+                                      caption: "Количество выпускников"
+                                    }).mb-2
+                                    p.caption Формат альбома
+                                    .row
+                                        .col-12.col-md-auto
+                                            +checkmark({
+                                              radio: "albumFormat3",
+                                              text: "20х30",
+                                              checked: "checked"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat3",
+                                              text: "30х20"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat3",
+                                              text: "27х27"
+                                            })
+                                .price-card__footer
+                                    p.text.mb-2 24 страницы в альбоме
+                                    p.caption Стоимость альбома
+                                    h4.title.title_price.mb-3 1 200
+                                    a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+                        .col-xl-4.swiper-slide
+                            .price-card
+                                .price-card__header
+                                    img(src="img/album-optimal.svg")
+                                    h4.subtitle.subtitle_secondary Оптимальный
+                                .price-card__desc
+                                    p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+                                    ul.list
+                                        li.list__item <strong>4 чел. на разворот</strong>
+                                        li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+                                .price-card__settings
+                                    +input-number({
+                                      caption: "Количество выпускников"
+                                    }).mb-2
+                                    p.caption Формат альбома
+                                    .row
+                                        .col-12.col-md-auto
+                                            +checkmark({
+                                              radio: "albumFormat4",
+                                              text: "20х30",
+                                              checked: "checked"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat4",
+                                              text: "30х20"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat4",
+                                              text: "27х27"
+                                            })
+                                .price-card__footer
+                                    p.text.mb-2 24 страницы в альбоме
+                                    p.caption Стоимость альбома
+                                    h4.title.title_price.mb-3 1 200
+                                    a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+                        .col-xl-4.swiper-slide
+                            .price-card
+                                .price-card__header
+                                    img(src="img/album-maximal.svg")
+                                    h4.subtitle.subtitle_secondary Максимальный
+                                .price-card__desc
+                                    p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+                                    ul.list
+                                        li.list__item <strong>4 чел. на разворот</strong>
+                                        li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+                                .price-card__settings
+                                    +input-number({
+                                      caption: "Количество выпускников"
+                                    }).mb-2
+                                    p.caption Формат альбома
+                                    .row
+                                        .col-12.col-md-auto
+                                            +checkmark({
+                                              radio: "albumFormat5",
+                                              text: "20х30",
+                                              checked: "checked"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat5",
+                                              text: "30х20"
+                                            })
+                                        .col-12.col-md-auto.mt-2.mt-md-0
+                                            +checkmark({
+                                              radio: "albumFormat5",
+                                              text: "27х27"
+                                            })
+                                .price-card__footer
+                                    p.text.mb-2 24 страницы в альбоме
+                                    p.caption Стоимость альбома
+                                    h4.title.title_price.mb-3 1 200
+                                    a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+
+                    .main-page-cardset__btn.swiper-button-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .main-page-cardset__btn.swiper-button-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')

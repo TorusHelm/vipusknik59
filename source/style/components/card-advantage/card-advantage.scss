@@ -1,0 +1,58 @@
+.card-advantage {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 120px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: $border;
+    flex: 0 0 auto;
+
+    @include respondTo(max-md) {
+      margin: 0 auto;
+    }
+
+    img {
+      flex: 0 0 auto;
+      display: block;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    height: 41px;
+    width: 41px;
+    border-radius: 50%;
+    background-color: $primary;
+    color: $clean;
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    margin-left: 40px;
+    flex: 0 1 auto;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    color: $subtitle;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 48px;
+  }
+}
+
+@import "modificators/steps";

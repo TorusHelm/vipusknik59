@@ -1,0 +1,13 @@
+.icon {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respondTo(max-md) {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,821 @@
+extends ../_template
+block variables
+	- let title = 'Главная'
+
+block content
+	include ../components/input/input-number
+	include ../components/checkmark/checkmark
+	include ../modules/card/card
+	main
+		article.container.space-article.pt-0
+			.row
+				.col
+					.main-slider__wrapper
+						.swiper-container.main-slider.js-main-swiper-container
+							.swiper-wrapper
+								-
+									let length = 0;
+
+								while length < 2
+									.swiper-slide.main-slider__slide(data-slider=length++)
+										picture.main-slider__slide-bg
+											img(src=`img/main-banner/main-banner${length - 1}.jpg` alt="")
+										.row
+											.col-xl-10
+												h2.main-slider__title.title Скидки на альбомы
+												.main-slider__desc % <strong>вашей скидки</strong> = количеству альбомов в заказе*
+													span.text-body
+														br/
+														br/ максимальный размер скидки 20%, цена автоматически
+														br/ формируется в корзине
+							.swiper-pagination
+						.swiper-button-prev.main-slider__btn.js-swiper-main-prev
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+						.swiper-button-next.main-slider__btn.js-swiper-main-next
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+		article.container.space-article.pt-0
+			.row
+				.col-xl-3
+					picture.absolute-image.rounded-left
+						img(style="background-color: gray;")
+				.col.pl-xl-3.py-xl-4.pr-xl-4.bg-light.rounded-right
+					.row.align-items-center.no-gutters
+						.col
+							.subtitle Пройди тест и получи альбом <br />с <strong>дополнительной реальностью <br />по цене классического!</strong>
+						.col-auto.ml-xl-auto
+							button.btn.btn_primary Пройти тест
+
+		article.container.space-article.pt-0
+			h2.title.space-title Выпускные альбомы для
+			.row
+				.col-xl-4
+					.main-card.is-active
+						picture.main-card__header
+							img(src="img/index-card.jpg")
+						.main-card__content
+							.main-card__desc.subtitle Для начальной школы
+							button.main-card__btn.btn.btn_accent.btn_full Выбрано
+				.col-xl-4
+					.main-card
+						picture.main-card__header
+							img(src="img/index-card1.jpg")
+						.main-card__content
+							.main-card__desc.subtitle Для детского сада
+							button.main-card__btn.btn.btn_accent.btn_full Выбрано
+				.col-xl-4
+					.main-card
+						picture.main-card__header
+							img(src="img/index-card2.jpg")
+						.main-card__content
+							.main-card__desc.subtitle Для 9, 11 классов и вузов
+							button.main-card__btn.btn.btn_accent.btn_full Выбрано
+
+		article.container.space-article.pt-0
+			.row.mb-4
+				.col-xl-6
+					.alert
+						+svg-use("ar-album", "alert__icon", "64", "64")
+						.alert__text.subtitle.text-primary Из чего состоит альбом <br />в стандартной AR обложке?
+				.col-xl-6
+					.alert
+						+svg-use("personal-album", "alert__icon", "64", "64")
+						.alert__text.subtitle.text-primary Из чего состоит альбом <br />в индивидуальной обложке?
+			.row
+				.col-12
+					.main-slider__wrapper
+						.swiper-container.main-slider.js-main-swiper-container
+							.swiper-wrapper
+								-
+									let lengthAgain = 0;
+
+								while lengthAgain < 2
+									.swiper-slide.main-slider__slide.main-slider__slide_fixed(data-slider=lengthAgain++)
+										picture.main-slider__slide-bg.main-slider__slide-bg-primary
+										.row.no-gutters.w-100
+											.col-xl-6.offset-xl-1
+												h2.title.title_md.space-title-md Что такое альбом <br />с дополненной реальностью (AR)?
+												p.text Это альбом, где фотография «оживает» при наведении на нее камеры смартфона. <br /><br />На месте, где размещена фотография, проигрывается видео со звуком продолжительностью до 3 минут.
+							.swiper-pagination
+						.swiper-button-prev.main-slider__btn.js-swiper-main-prev
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+						.swiper-button-next.main-slider__btn.js-swiper-main-next
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+		article.container.pb-3
+			h2.title.space-title Варианты дизайна
+			.row.js-tab-container.tab.tab_main-page
+				.col-12
+					ul.tab-list
+						li.tab-list__item.js-tab-menu-item.is-active(data-target="#target0")
+							h4.tab-list__title AR обложка
+						li.tab-list__item.js-tab-menu-item(data-target="#target1")
+							h4.tab-list__title Индивидуальная обложка
+
+				.col-12
+					.tab__content.is-active#target0
+						.tab__shelf
+							img(src="img/shelf.svg", alt="")
+						.swiper-container.js-swiper-albums.pt-2
+							.swiper-wrapper
+								.swiper-slide(style="width: 136px;")
+									.album-preview
+										picture.album-preview__image
+											img(src="img/index-album1.jpg")
+										h3.album-preview__text Название <br />дизайна
+										a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+								.swiper-slide(style="width: 180px;")
+									.album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+										h3.album-preview__text Название <br />дизайна
+										a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+								.swiper-slide(style="width: 264px;")
+									.album-preview
+										picture.album-preview__image
+											img(src="img/index-album3.jpg")
+										h3.album-preview__text Название <br />дизайна
+										a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+								.swiper-slide(style="width: 180px;")
+									.album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+										h3.album-preview__text Название <br />дизайна
+										a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+								.swiper-slide(style="width: 136px;")
+									.album-preview
+										picture.album-preview__image
+											img(src="img/index-album1.jpg")
+										h3.album-preview__text Название <br />дизайна
+										a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+
+							.swiper-button-prev.swiper-button
+								+svg-use('slider-arrow', '')
+							.swiper-button-next.swiper-button
+								+svg-use('slider-arrow', '')
+
+					.tab__content#target1
+						.tab__shelf
+							img(src="img/shelf.svg", alt="")
+						.swiper-container.js-swiper-albums.pt-2
+							.swiper-wrapper
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+								.swiper-slide
+									a(href="/album-inside.html").album-preview
+										picture.album-preview__image
+											img(src="img/index-album2.jpg")
+							.swiper-button-prev.swiper-button
+								+svg-use('slider-arrow', '')
+							.swiper-button-next.swiper-button
+								+svg-use('slider-arrow', '')
+
+		article.container.space-article.pt-0
+			h2.title.space-title Сколько стоит выпускной альбом?
+			.row.js-tab-container.tab.tab_main-page
+				.col-12
+					ul.tab-list
+						li.tab-list__item.js-tab-menu-item.is-active(data-target="#price0")
+							h4.tab-list__title AR обложка
+						li.tab-list__item.js-tab-menu-item(data-target="#price1")
+							h4.tab-list__title Индивидуальная обложка
+
+				.col-12
+					.tab__content.is-active#price0
+						.row
+							.col-xl-4
+								.price-card
+									.price-card__header
+										img(src="img/album-minimal.svg")
+										h4.subtitle.subtitle_secondary Минимальный
+									.price-card__desc
+										p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+										ul.list
+											li.list__item <strong>4 чел. на разворот</strong>
+											li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+									.price-card__settings
+										+input-number({
+											caption: "Количество выпускников"
+										}).mb-2
+										p.caption Формат альбома
+										.row
+											.col-auto
+												+checkmark({
+													radio: "albumFormat0",
+													text: "20х30",
+													checked: true
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat0",
+													text: "30х20"
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat0",
+													text: "27х27"
+												})
+									.price-card__footer
+										p.text.mb-2 24 страницы в альбоме
+										p.caption Стоимость альбома
+										h4.title.title_price.mb-3 1 200
+										a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+							.col-xl-4
+								.price-card
+									.price-card__header
+										img(src="img/album-optimal.svg")
+										h4.subtitle.subtitle_secondary Оптимальный
+									.price-card__desc
+										p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+										ul.list
+											li.list__item <strong>4 чел. на разворот</strong>
+											li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+									.price-card__settings
+										+input-number({
+											caption: "Количество выпускников"
+										}).mb-2
+										p.caption Формат альбома
+										.row
+											.col-auto
+												+checkmark({
+													radio: "albumFormat1",
+													text: "20х30",
+													checked: true
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat1",
+													text: "30х20"
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat1",
+													text: "27х27"
+												})
+									.price-card__footer
+										p.text.mb-2 24 страницы в альбоме
+										p.caption Стоимость альбома
+										h4.title.title_price.mb-3 1 200
+										a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+							.col-xl-4
+								.price-card
+									.price-card__header
+										img(src="img/album-maximal.svg")
+										h4.subtitle.subtitle_secondary Максимальный
+									.price-card__desc
+										p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+										ul.list
+											li.list__item <strong>4 чел. на разворот</strong>
+											li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+									.price-card__settings
+										+input-number({
+											caption: "Количество выпускников"
+										}).mb-2
+										p.caption Формат альбома
+										.row
+											.col-auto
+												+checkmark({
+													radio: "albumFormat2",
+													text: "20х30",
+													checked: true
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat2",
+													text: "30х20"
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat2",
+													text: "27х27"
+												})
+									.price-card__footer
+										p.text.mb-2 24 страницы в альбоме
+										p.caption Стоимость альбома
+										h4.title.title_price.mb-3 1 200
+										a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+
+					.tab__content#price1
+						.row
+							.col-xl-4
+								.price-card
+									.price-card__header
+										img(src="img/album-minimal.svg")
+										h4.subtitle.subtitle_secondary Минимальный
+									.price-card__desc
+										p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+										ul.list
+											li.list__item <strong>4 чел. на разворот</strong>
+											li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+									.price-card__settings
+										+input-number({
+											caption: "Количество выпускников"
+										}).mb-2
+										p.caption Формат альбома
+										.row
+											.col-auto
+												+checkmark({
+													radio: "albumFormat3",
+													text: "20х30",
+													checked: true
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat3",
+													text: "30х20"
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat3",
+													text: "27х27"
+												})
+									.price-card__footer
+										p.text.mb-2 24 страницы в альбоме
+										p.caption Стоимость альбома
+										h4.title.title_price.mb-3 1 200
+										a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+							.col-xl-4
+								.price-card
+									.price-card__header
+										img(src="img/album-optimal.svg")
+										h4.subtitle.subtitle_secondary Оптимальный
+									.price-card__desc
+										p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+										ul.list
+											li.list__item <strong>4 чел. на разворот</strong>
+											li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+									.price-card__settings
+										+input-number({
+											caption: "Количество выпускников"
+										}).mb-2
+										p.caption Формат альбома
+										.row
+											.col-auto
+												+checkmark({
+													radio: "albumFormat4",
+													text: "20х30",
+													checked: true
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat4",
+													text: "30х20"
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat4",
+													text: "27х27"
+												})
+									.price-card__footer
+										p.text.mb-2 24 страницы в альбоме
+										p.caption Стоимость альбома
+										h4.title.title_price.mb-3 1 200
+										a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+							.col-xl-4
+								.price-card
+									.price-card__header
+										img(src="img/album-maximal.svg")
+										h4.subtitle.subtitle_secondary Максимальный
+									.price-card__desc
+										p Таким образом реализация намеченных <br />плановых заданий требуют от нас анализа <br />систем массового участия. Товарищи!
+										ul.list
+											li.list__item <strong>4 чел. на разворот</strong>
+											li.list__item <span>Переплет:</span> Журнальный, Твёрдый
+									.price-card__settings
+										+input-number({
+											caption: "Количество выпускников"
+										}).mb-2
+										p.caption Формат альбома
+										.row
+											.col-auto
+												+checkmark({
+													radio: "albumFormat5",
+													text: "20х30",
+													checked: true
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat5",
+													text: "30х20"
+												})
+											.col-auto
+												+checkmark({
+													radio: "albumFormat5",
+													text: "27х27"
+												})
+									.price-card__footer
+										p.text.mb-2 24 страницы в альбоме
+										p.caption Стоимость альбома
+										h4.title.title_price.mb-3 1 200
+										a(href="#").btn.btn_thin.btn_warning.btn_full Смотреть примеры оформления
+
+		article.container.space-article.article-clean
+			h2.title.space-title Все цены включают
+			.row
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+				.col-sm-6.col-xl-3.space-card-price
+					.icon
+						img(src="img/advantage0.svg")
+					p.text.mt-2 Фотосессия в Вашем <br />учебном заведении
+
+		article.container.space-article
+			h2.title
+			.row
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+				.col-xl-3.space-card-price
+					.icon-adding
+						.icon-adding__header
+							img(src="img/album-addings.png")
+							.icon-adding__desc Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.
+						p.icon-adding__text.text Ламинированные <br>листы
+
+		article.container.space-article.pt-0
+			h2.title.space-title Рассчитать цену
+			.row
+				.col-12
+					.quiz.js-tab-container
+						.quiz__header
+							.quiz__step.js-tab-menu-item.is-active(data-target="#quiz")
+								p.title.title_md 1
+							.quiz__step.js-tab-menu-item(data-target="#quiz1")
+								p.title.title_md 2
+							.quiz__step.js-tab-menu-item(data-target="#quiz2")
+								p.title.title_md 3
+							.quiz__step.js-tab-menu-item.d-none(data-target="#quizDone")
+								p.title.title_md done
+
+						.quiz__content
+							.tab__content.is-active#quiz
+								p.quiz__pretitle шаг 1:
+								h3.title.title_md.mb-4 Вид альбома
+								.row
+									.col-xl-5
+										.subtitle.mb-2 Выберите тип обложки
+										.row.no-gutters
+											.col-auto
+												+checkmark({
+													radio: "coverType",
+													text: "Стандартная",
+													checked: true
+												})
+											.col-auto.ml-5
+												+checkmark({
+													radio: "coverType",
+													text: "Индивидуальная"
+												})
+										.subtitle.mt-4.mb-2 Выберите формат альбома
+										.row.no-gutters
+											.col-auto
+												+checkmark({
+													radio: "coverSize",
+													text: "20х30",
+													checked: true
+												})
+											.col-auto.ml-5
+												+checkmark({
+													radio: "coverSize",
+													text: "30х20"
+												})
+											.col-auto.ml-5
+												+checkmark({
+													radio: "coverSize",
+													text: "27х27"
+												})
+									.col.xl-5.offset-xl-1
+										.subtitle.mb-2 Ламинированные страницы
+										.row.no-gutters
+											.col-auto
+												+checkmark({
+													radio: "coverLaminated",
+													text: "Да",
+													checked: true
+												})
+											.col-auto.ml-5
+												+checkmark({
+													radio: "coverLaminated",
+													text: "Нет",
+													disable: true
+												})
+									.col-12.mt-4.d-flex.justify-content-end
+										.quiz__btn.btn.btn_warning.js-tab-menu-subitem(data-target="#quiz1") Перейти к выбору содержания
+											+svg-use("arrow", "" , "16", "16")
+
+							.tab__content#quiz1
+								p.quiz__pretitle шаг 2:
+								h3.title.title_md.mb-4 Вид альбома
+								.row
+									.col-12
+										.subtitle.mb-2 Индивидуальная обложка
+										.row.no-gutters
+											.col-auto
+												.row.no-gutters.align-items-center
+													.col-auto
+														+svg-use("album-minimal", "text-primary", "48", "40")
+													.col-auto.ml-2
+														+checkmark({
+															radio: "cover1Type",
+															text: "Минимальная",
+															checked: true
+														})
+											.col-auto.ml-5
+												.row.no-gutters.align-items-center
+													.col-auto
+														+svg-use("album-optimal", "text-primary", "48", "40")
+													.col-auto.ml-2
+														+checkmark({
+															radio: "cover1Type",
+															text: "Оптимальная"
+														})
+											.col-auto.ml-5
+												.row.no-gutters.align-items-center
+													.col-auto
+														+svg-use("album-maximal", "text-primary", "48", "40")
+													.col-auto.ml-2
+														+checkmark({
+															radio: "cover1Type",
+															text: "Максимальная"
+														})
+										.subtitle.mt-4.mb-2 Дополненная реальность
+										.row.no-gutters
+											.col-auto
+												+checkmark({
+													radio: "cover1Ar",
+													text: "Да",
+													checked: true
+												})
+											.col-auto.ml-5
+												+checkmark({
+													radio: "cover1Ar",
+													text: "Нет",
+													disable: true
+												})
+									.col-12.mt-4.d-flex.justify-content-end
+										.quiz__btn.btn.btn_warning.js-tab-menu-subitem(data-target="#quiz2") Перейти к выбору содержания
+											+svg-use("arrow", "" , "16", "16")
+
+							.tab__content#quiz2
+								p.quiz__pretitle шаг 3:
+								h3.title.title_md.mb-4 Количество страниц
+								.row
+									.col-xl-5.mb-2
+										.subtitle.mb-2 Количество выпускников
+										+input-number({
+											caption: ""
+										})
+									.col-xl-7.mb-2
+										.subtitle.mb-2 Количество разворотов с фотоисторией
+										+input-number({
+											caption: ""
+										})
+									.col-xl-5
+										.subtitle.mb-2 Количество альбомов
+										+input-number({
+											caption: ""
+										})
+
+									.col-12.mt-4.d-flex.justify-content-end
+										.quiz__btn.btn.btn_warning.js-tab-menu-subitem(data-target="#quizDone") Готово
+											+svg-use("arrow", "" , "16", "16")
+
+							.tab__content#quizDone
+								p.quiz__pretitle Победа
+
+		article.container.space-article
+			h2.title.space-title Почему заказывают у нас?
+			.card-advantage.mb-xl-8
+				.card-advantage__icon
+					.card-advantage__label 1
+					img(src="img/why-me0.svg")
+				.card-advantage__content
+					.card-advantage__title Официально и надёжно
+					.card-advantage__desc Работаем для Вас 7 лет. Заключаем договор, предоставляем чеки, соблюдаем сроки.
+			.card-advantage.mb-xl-8
+				.card-advantage__icon
+					.card-advantage__label 2
+					img(src="img/why-me1.svg")
+				.card-advantage__content
+					.card-advantage__title Лучшие фотографы
+					.card-advantage__desc Опыт, профессиональная фототехника, медицинские книжки.
+			.card-advantage.mb-xl-8
+				.card-advantage__icon
+					.card-advantage__label 3
+					img(src="img/why-me2.svg")
+				.card-advantage__content
+					.card-advantage__title Учитываем все пожелания
+					.card-advantage__desc Добавим в альбом: детские фото, интервью,  фотоисторию.
+			.card-advantage.mb-xl-8
+				.card-advantage__icon
+					.card-advantage__label 4
+					img(src="img/why-me3.svg")
+				.card-advantage__content
+					.card-advantage__title Собственная типография
+					.card-advantage__desc Контроль качества на всех этапах изготовления.
+			.card-advantage.mb-xl-8
+				.card-advantage__icon
+					.card-advantage__label 5
+					img(src="img/why-me4.svg")
+				.card-advantage__content
+					.card-advantage__title Собственная фотостудия
+					.card-advantage__desc Комфортные условия для проведения фотосессии.
+
+		article.container.space-article.pt-0
+			.row.js-tab-container.tab.tab_main-page
+				.col-12
+					ul.tab-list
+						li.tab-list__item.js-tab-menu-item.is-active(data-target="#example0")
+							h4.tab-list__title Обложки
+						li.tab-list__item.js-tab-menu-item(data-target="#example1")
+							h4.tab-list__title Развороты
+						li.tab-list__item.js-tab-menu-item(data-target="#example2")
+							h4.tab-list__title Фотогалерея
+
+				.col-12
+					.tab__content.is-active#example0
+						.row
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+					.tab__content#example1
+						.row
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+					.tab__content#example2
+						.row
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+				.col-auto.mt-5.mx-auto
+					button.btn.btn_warning Отправить прайс на WhatsApp и Viber
+
+		article.space-article.article-dirty.container
+			.swiper-container.js-main-card-slider
+				.swiper-wrapper.row.main-page-cardset
+					-
+						let data3 = [
+							{
+								img: 'img/prefooter-card/prefooter-card.jpg',
+								title: 'Вы фотограф?',
+								desc: 'Мы предлагаем <a href="/questions.html#target1" class="link-inline">специальные условия</a> для фотографов',
+								btnText: 'Задать вопрос',
+								href: '/questions.html#target1',
+							},
+							{
+								img: 'img/prefooter-card/prefooter-card1.jpg',
+								title: 'Нужна помощь?',
+								desc: 'Не&nbsp;нашли нужной информацииили не&nbsp;можете определиться с&nbsp;выбором? Перейдите в раздел “<a href="/questions.html">вопрос-ответ</a>” или просто напишите или позвоните нам по&nbsp;телефону: <a href="tel:+73422032300"><strong>+7&nbsp;(342)&nbsp;203&nbsp;23&nbsp;00</strong></a>',
+								btnText: 'Написать нам',
+								href: '/contacts.html',
+							},
+							{
+								img: 'img/prefooter-card/prefooter-card2.jpg',
+								title: 'Онлайн-редактор',
+								desc: 'Хотите сэкономить на&nbsp;изготовлении альбома? Создайте  альбом самостоятельно через удобный онлайн-редактор. <a href="#">Инструкция пользования редактором</a>',
+								btnText: 'Перейти',
+								href: '#',
+							},
+							{
+								img: 'img/prefooter-card/prefooter-card3.jpg',
+								title: 'Нужен альбом с&nbsp;фотосессией «под ключ»?',
+								desc: 'Предлагаем выпускные альбомы «под ключ» с&nbsp;фотосъёмкой и&nbsp;изготовлением',
+								btnText: 'Перейти',
+								href: 'http://vipusknik59.ru',
+							},
+						];
+
+					each item in data3
+						.col-md-6.col-xl-3.space-card-albums.swiper-slide
+							+card(item, prefooter=true)

@@ -1,0 +1,33 @@
+.map {
+    position: relative;
+
+    iframe {
+        @include respondTo(max-md) {
+            height: 300px;
+        }
+    }
+
+    &__aside {
+        position: absolute;
+        bottom: 32px;
+        width: 100%;
+        right: 0;
+        pointer-events: none;
+
+        @include respondTo(max-xl) {
+            position: static;
+            transform: none;
+        }
+
+        .form-mini {
+            pointer-events: all;
+
+            @include respondTo(max-xl) {
+                .form-mini {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

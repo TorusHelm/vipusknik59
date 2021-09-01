@@ -1,0 +1,26 @@
+mixin input-number(incomeData)
+    -
+        let defData = {
+            caption: 'Caption',
+            type: 'text',
+            value: '20',
+            name: '',
+            require: false
+        };
+
+    -
+        let data = Object.assign(defData, incomeData);
+
+    .input-number__wrapper
+        p.caption!= data.caption
+        .input-number&attributes(attributes).js-input-number-wrapper
+            input(type="number" value=data.value name=data.name require=data.require).js-input-number
+            .input-number__down.js-input-number-down
+                svg(xmlns="http://www.w3.org/2000/svg" width="16" height="2" viewBox="0 0 16 2")
+                    g(id="Group_160" data-name="Group 160" transform="translate(-733 -213)")
+                        rect(id="Rectangle_61" data-name="Rectangle 61" width="16" height="2" transform="translate(733 213)" fill="#b8b8b8")
+            .input-number__up.js-input-number-up
+                svg(xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16")
+                    g(id="Group_159" data-name="Group 159" transform="translate(-733 -206)")
+                        rect(id="Rectangle_61" data-name="Rectangle 61" width="16" height="2" transform="translate(733 213)" fill="#b8b8b8")
+                        rect(id="Rectangle_62" data-name="Rectangle 62" width="16" height="2" transform="translate(742 206) rotate(90)" fill="#b8b8b8")

@@ -1,0 +1,17 @@
+.btn {
+  &_accent {
+    background-color: rgba($warning, 0.2);
+    border-color: transparent;
+    color: $warning;
+
+    &:hover {
+      background-color: rgba($warning, 0.3);
+      border-color: transparent;
+    }
+
+    &:focus {
+      background-color: rgba($warning, 0.2);
+      box-shadow: $btn-focus rgba($warning, 0.4);
+    }
+  }
+}

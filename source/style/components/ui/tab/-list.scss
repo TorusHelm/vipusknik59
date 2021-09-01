@@ -1,0 +1,147 @@
+.tab-list {
+    $root: #{&};
+
+    display: flex;
+    position: relative;
+    border-bottom: 2px solid $border;
+    margin-bottom: 24px;
+
+    @include respondTo(max-md) {
+        max-width: 100vw;
+        overflow: auto;
+        margin-left: -12px;
+        margin-right: -12px;
+        border-bottom: 0;
+    }
+
+    &_high-gap {
+        margin-bottom: 64px;
+
+        @include respondTo(max-md) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &_checkmars {
+        border-bottom: 0;
+        padding-right: 24px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        @include respondTo(max-md) {
+            overflow: hidden;
+            padding-left: 16px;
+        }
+
+        &:after, &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 64px;
+            z-index: 1;
+            transition: opacity .3s ease, z-index .3s ease;
+        }
+
+        &:after {
+            right: 0;
+            background: linear-gradient(to right, transparent, #F7F7F7);
+        }
+
+        &:before {
+            opacity: 0;
+            z-index: -1;
+            left: 0;
+            background: linear-gradient(to left, transparent, #F7F7F7);
+        }
+
+        #{$root}__item {
+            flex: 0 0 auto;
+            padding: 0;
+            transition: color .3s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .swiper-button {
+            height: 100%;
+            transition: opacity .3s ease, z-index .3s ease;
+
+            &.swiper-button-prev {
+                opacity: 0;
+                z-index: -1;
+            }
+
+            &.swiper-button-next {
+                &.swiper-button-disabled {
+                    opacity: 0;
+                    z-index: -1;
+                }
+            }
+        }
+
+        &.not-on-start {
+            &:before {
+                opacity: 1;
+                z-index: 2;
+            }
+
+            .swiper-button {
+                &.swiper-button-prev {
+                    opacity: 1;
+                    z-index: 3;
+                }
+            }
+        }
+    }
+
+    &__item {
+        flex: 0 0 auto;
+        padding: 10px 16px 11px;
+        transition: color .3s ease;
+        cursor: pointer;
+        user-select: none;
+
+        &.is-active {
+            color: $subtitle;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                z-index: 1;
+                background-color: $warning;
+                transition: left .3s ease, width .3s ease;
+
+                @include respondTo(max-md) {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 600;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__underline {
+        position: absolute;
+        bottom: -2px;
+        height: 2px;
+        z-index: 1;
+        background-color: $warning;
+        transition: left .3s ease, width .3s ease;
+
+        @include respondTo(max-md) {
+            bottom: 0;
+        }
+    }
+}

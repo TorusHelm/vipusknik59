@@ -1,0 +1,25 @@
+.btn {
+    &_thin {
+        background-color: $clean;
+
+        &.btn_warning {
+            background-color: transparent;
+            color: $warning;
+            border-color: $warning;
+
+            &:hover {
+                background-color: rgba($warning, 0.1);
+            }
+        }
+
+        &.btn_primary {
+            background-color: transparent;
+            color: $primary;
+            border-color: $primary;
+
+            &:hover {
+                background-color: rgba($primary, 0.1);
+            }
+        }
+    }
+}

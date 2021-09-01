@@ -1,0 +1,93 @@
+-
+    let footerMenu = [
+        {
+            title: 'AR альбомы',
+            href: '/ar-albums.html'
+        },
+        {
+            title: 'Классические альбомы',
+            href: '/classic-albums.html'
+        },
+        {
+            title: 'Эконом варианты',
+            href: '/eco-albums.html'
+        },
+        {
+            title: 'AR-открытки и постеры',
+            href: '/ar-posters.html'
+        },
+        {
+            title: 'Наши работы',
+            href: '/our-works.html'
+        },
+        {
+            title: 'Акции',
+            href: '/actions.html'
+        },
+        {
+            title: 'О компании',
+            href: 'about.html'
+        },
+        {
+            title: 'Вопросы и ответы',
+            href: '/questions.html'
+        },
+        {
+            title: 'Контакты',
+            href: '/contacts.html'
+        },
+    ]
+
+    let addressMenu = [
+        {
+            title: 'Написать нам',
+            href: '/contacts.html',
+        },
+        {
+            title: 'Политика конфиденциальности',
+            modal: '#confidential',
+        },
+        {
+            title: 'Пользовательское соглашение',
+            modal: '#agreement',
+        },
+        {
+            title: 'Оплата и доставка',
+            modal: '#pay',
+        },
+        {
+            title: 'Возврат',
+            modal: '#return',
+        },
+    ]
+
+footer.footer
+    .footer__header.container
+        .row
+            .col-xl-8
+                .row.footer-menu
+                    each item in footerMenu
+                        .col-sm-6.col-md-4.footer-menu__item
+                            a(href=item.href)!= item.title
+
+            .col-xl-4.mt-3.mt-xl-0
+                .row.footer-contacts
+                    .col-sm-6.col-md-4.col-xl-6.footer-contacts__item
+                        .caption Звоните нам:
+                        a.footer-contacts__phone(href="tel:+73422032300") +7 (342) 203 23 00
+                    .col-sm-6.col-md-4.col-xl-6.footer-contacts__item.px-xl-0
+                        .caption Приходите к нам:
+                        p.footer-contacts__address г. Пермь, ул. Крупской, 75
+    .footer__address
+        .footer-address.container
+            .footer-address__set
+                .footer-address__item
+                    .footer-address__copyr © 2017, ООО «Фото ПРО»
+                each item in addressMenu
+                    .footer-address__item
+                        if ( item.href )
+                            a(href=item.href).footer-address__link!= item.title
+                        else
+                            span(data-target=item.modal).footer-address__link.js-modal-init!= item.title
+            a(href="#").footer-address__logo
+                +svg-use('visa')

@@ -1,0 +1,18 @@
+.title {
+  &_price {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+
+    &:after {
+      content: "₽";
+      display: inline-block;
+      margin-left: 4px;
+    }
+
+    @include respondTo(max-md) {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+}

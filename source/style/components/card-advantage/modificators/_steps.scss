@@ -1,0 +1,41 @@
+.card-advantage {
+  &__group {
+    @include respondTo(max-md) {
+      border-radius: 16px;
+      border: 1px solid $border;
+      padding-bottom: 24px;
+    }
+  }
+
+  &_steps {
+    display: block;
+
+    @include respondTo(max-md) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .card-advantage {
+      &__content {
+        margin-left: 0;
+      }
+
+      &__title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 500;
+        color: $subtitle;
+        margin-top: 24px;
+
+        &_sm {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+
+      &__icon {
+        background-color: $warning-light;
+      }
+    }
+  }
+}

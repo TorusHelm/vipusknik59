@@ -1,0 +1,38 @@
+article.space-article.article-dirty.container
+    .swiper-container.js-main-card-slider
+        .swiper-wrapper.row.main-page-cardset
+          -
+              let data3 = [
+                  {
+                      img: 'img/prefooter-card/prefooter-card.jpg',
+                      title: 'Вы фотограф?',
+                      desc: 'Мы предлагаем <a href="/questions.html#target1" class="link-inline">специальные условия</a> для фотографов',
+                      btnText: 'Задать вопрос',
+                      href: '/questions.html#target1',
+                  },
+                  {
+                      img: 'img/prefooter-card/prefooter-card1.jpg',
+                      title: 'Нужна помощь?',
+                      desc: 'Не&nbsp;нашли нужной информацииили не&nbsp;можете определиться с&nbsp;выбором? Перейдите в раздел “<a href="/questions.html">вопрос-ответ</a>” или просто напишите или позвоните нам по&nbsp;телефону: <a href="tel:+73422032300"><strong>+7&nbsp;(342)&nbsp;203&nbsp;23&nbsp;00</strong></a>',
+                      btnText: 'Написать нам',
+                      href: '/contacts.html',
+                  },
+                  {
+                      img: 'img/prefooter-card/prefooter-card2.jpg',
+                      title: 'Онлайн-редактор',
+                      desc: 'Хотите сэкономить на&nbsp;изготовлении альбома? Создайте  альбом самостоятельно через удобный онлайн-редактор. <a href="#">Инструкция пользования редактором</a>',
+                      btnText: 'Перейти',
+                      href: '#',
+                  },
+                  {
+                      img: 'img/prefooter-card/prefooter-card3.jpg',
+                      title: 'Нужен альбом с&nbsp;фотосессией «под ключ»?',
+                      desc: 'Предлагаем выпускные альбомы «под ключ» с&nbsp;фотосъёмкой и&nbsp;изготовлением',
+                      btnText: 'Перейти',
+                      href: 'http://vipusknik59.ru',
+                  },
+              ];
+
+          each item in data3
+              .col-md-6.col-xl-3.space-card-albums.swiper-slide
+                  +card(item, prefooter=true)

@@ -1,0 +1,75 @@
+-
+    let menuItems = [
+        {
+            href: '/ar-albums.html',
+            title: 'AR альбомы',
+            isActive: true
+        },
+        {
+            href: '/classic-albums.html',
+            title: 'Классические альбомы'
+        },
+        {
+            href: 'eco-albums.html',
+            title: 'Эконом варианты'
+        },
+        {
+            href: '/ar-posters.html',
+            title: 'AR-открытки и постеры'
+        },
+        {
+            href: '/our-works.html',
+            title: 'Наши работы'
+        },
+        {
+            href: '/actions.html',
+            title: 'Акции'
+        }
+    ]
+
+header.header.js-header
+    .header__wrapper.container
+        .header__logo.logo
+            a(href="/ar-albums.html").logo__icon
+                img(src="./img/logo.png", alt="logo")
+            ul.header__submenu.header-submenu.d-none.d-xl-flex
+                li.header-submenu__item
+                    a(href="#") О компании
+                li.header-submenu__item
+                    a(href="/questions.html") Вопросы и ответы
+                li.header-submenu__item
+                    a(href="/contacts.html") Контакты
+                li.header-submenu__item
+                    a(href="#") Создать альбом самостоятельно
+                        +svg-use('outer-link', '', '16', '16')
+            .header__toggler
+                .toggler.js-header-toggler
+                    .toggler__row
+        .header__contacts
+            .header__address
+                a(href="tel:+73422032300") +7 (342) <strong>203 23 00</strong>
+                | г. Пермь, ул. Крупской, 75
+            .header__btn
+                button.btn.btn_warning.js-modal-init(data-target="#getCall") Перезвонить вам?
+        .header__menu
+            ul.header-menu
+                each item in menuItems
+                    li.header-menu__item(class=`${item.isActive ? 'is-active' : ''}`)
+                        a(href=item.href)!= item.title
+            ul.header__submenu.header-submenu.d-xl-none
+                li.header-submenu__item
+                    a(href="#") О компании
+                li.header-submenu__item
+                    a(href="#") Вопросы и ответы
+                li.header-submenu__item
+                    a(href="#") Контакты
+                li.header-submenu__item
+                    a(href="#") Создать альбом самостоятельно
+                        +svg-use('outer-link', '', '16', '16')
+            .header__menu-footer
+                .header__address
+                    a(href="tel:+73422032300") +7 (342) <strong>203 23 00</strong>
+                    | г. Пермь, ул. Крупской, 75
+                .header__btn
+                    button.btn.btn_warning.js-modal-init(data-target="#getCall") Перезвонить вам?
+    .header__darkness.js-header-darkness

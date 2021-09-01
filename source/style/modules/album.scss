@@ -1,0 +1,39 @@
+.album {
+    &__slider {
+        position: relative;
+    }
+
+    &__image {
+        // max-height: 738px;
+        display: block;
+        border-radius: 16px;
+        overflow: hidden;
+
+        // @include respondTo(max-lg) {
+        //     max-height: 540px;
+        // }
+
+        // @include respondTo(max-md) {
+        //     max-height: 400px;
+        // }
+
+        // @include respondTo(max-sm) {
+        //     max-height: 300px;
+        // }
+
+        img {
+            // height: 100%;
+            width: 100%;
+            display: block;
+            // object-fit: cover;
+            // object-position: center;
+            max-height: calc(100vh - 100px);
+        }
+    }
+
+    .main-slider__btn {
+        @include respondTo(max-md) {
+            display: flex;
+        }
+    }
+}

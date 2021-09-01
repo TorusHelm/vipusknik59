@@ -1,0 +1,181 @@
+article.container.pb-3
+    h2.title.space-title Варианты дизайна
+    .row.js-tab-container.tab.tab_main-page
+        .col-12
+            ul.tab-list
+                li.tab-list__item.js-tab-menu-item.is-active(data-target="#target0")
+                    h4.tab-list__title Папка-Эконом
+                li.tab-list__item.js-tab-menu-item(data-target="#target1")
+                    h4.tab-list__title Планшет
+                li.tab-list__item.js-tab-menu-item(data-target="#target2")
+                    h4.tab-list__title Трюмо
+                li.tab-list__item.js-tab-menu-item(data-target="#target3")
+                    h4.tab-list__title Альбом-эконом
+
+        .col-12
+            .tab__content.is-active#target0
+                .tab__shelf
+                    img(src="img/shelf.svg", alt="")
+                .swiper-container.js-swiper-albums.pt-2
+                    .swiper-wrapper
+                        .swiper-slide(style="width: 136px;")
+                            .album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album1.jpg")
+                                h3.album-preview__text Название <br />дизайна
+                                a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+                        .swiper-slide(style="width: 180px;")
+                            .album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                                h3.album-preview__text Название <br />дизайна
+                                a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+                        .swiper-slide(style="width: 264px;")
+                            .album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album3.jpg")
+                                h3.album-preview__text Название <br />дизайна
+                                a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+                        .swiper-slide(style="width: 180px;")
+                            .album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                                h3.album-preview__text Название <br />дизайна
+                                a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+                        .swiper-slide(style="width: 136px;")
+                            .album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album1.jpg")
+                                h3.album-preview__text Название <br />дизайна
+                                a(href="#").btn.btn_thin.btn_warning.album-preview__btn Подробнее
+
+                    .swiper-button-prev.swiper-button
+                        +svg-use('slider-arrow', '')
+                    .swiper-button-next.swiper-button
+                        +svg-use('slider-arrow', '')
+
+            .tab__content#target1
+                .tab__shelf
+                    img(src="img/shelf.svg", alt="")
+                .swiper-container.js-swiper-albums.pt-2
+                    .swiper-wrapper
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                    .swiper-button-prev.swiper-button
+                        +svg-use('slider-arrow', '')
+                    .swiper-button-next.swiper-button
+                        +svg-use('slider-arrow', '')
+
+            .tab__content#target2
+                .tab__shelf
+                    img(src="img/shelf.svg", alt="")
+                .swiper-container.js-swiper-albums.pt-2
+                    .swiper-wrapper
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                    .swiper-button-prev.swiper-button
+                        +svg-use('slider-arrow', '')
+                    .swiper-button-next.swiper-button
+                        +svg-use('slider-arrow', '')
+
+            .tab__content#target3
+                .tab__shelf
+                    img(src="img/shelf.svg", alt="")
+                .swiper-container.js-swiper-albums.pt-2
+                    .swiper-wrapper
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                        .swiper-slide
+                            a(href="/album-inside.html").album-preview
+                                picture.album-preview__image
+                                    img(src="img/index-album2.jpg")
+                    .swiper-button-prev.swiper-button
+                        +svg-use('slider-arrow', '')
+                    .swiper-button-next.swiper-button
+                        +svg-use('slider-arrow', '')

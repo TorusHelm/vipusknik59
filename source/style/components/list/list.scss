@@ -1,0 +1,40 @@
+.list {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    &_md {
+        .list__item {
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+
+    &__item {
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 16px;
+
+        &_primary {
+            color: $primary;
+
+            &:before {
+                background-color: $primary;
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &:before {
+            content: '';
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background-color: $warning;
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+    }
+}

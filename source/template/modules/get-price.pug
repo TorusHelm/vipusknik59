@@ -1,0 +1,150 @@
+article.container.space-article.pt-0#quiz-section
+    h2.title.space-title Рассчитать цену
+    .row
+        .col-12
+            .quiz.js-tab-container
+                .quiz__header
+                    .quiz__step.js-tab-menu-item.is-active(data-target="#quiz")
+                        p.title.title_md 1
+                    .quiz__step.js-tab-menu-item(data-target="#quiz1")
+                        p.title.title_md 2
+                    .quiz__step.js-tab-menu-item(data-target="#quiz2")
+                        p.title.title_md 3
+                    .quiz__step.js-tab-menu-item.d-none(data-target="#quizDone")
+                        p.title.title_md done
+
+                .quiz__content
+                    .tab__content.is-active#quiz
+                        p.quiz__pretitle шаг 1:
+                        h3.title.title_md.mb-4 Вид альбома
+                        .row
+                            .col-xl-5
+                                .subtitle.mb-2 Выберите тип обложки
+                                .row.no-gutters
+                                    .col-12.col-md-auto
+                                        +checkmark({
+                                          radio: "coverType",
+                                          text: "Стандартная",
+                                          checked: "checked"
+                                        })
+                                    .col-12.col-md-auto.ml-md-5.mt-2.mt-md-0
+                                        +checkmark({
+                                          radio: "coverType",
+                                          text: "Индивидуальная"
+                                        })
+                                .subtitle.mt-4.mb-2 Выберите формат альбома
+                                .row.no-gutters.mb-3.mb-md-0
+                                    .col-12.col-md-auto
+                                        +checkmark({
+                                          radio: "coverSize",
+                                          text: "20х30",
+                                          checked: "checked"
+                                        })
+                                    .col-12.col-md-auto.ml-md-5.mt-2.mt-md-0
+                                        +checkmark({
+                                          radio: "coverSize",
+                                          text: "30х20"
+                                        })
+                                    .col-12.col-md-auto.ml-md-5.mt-2.mt-md-0
+                                        +checkmark({
+                                          radio: "coverSize",
+                                          text: "27х27"
+                                        })
+                            .col.xl-5.offset-xl-1
+                                .subtitle.mb-2 Ламинированные страницы
+                                .row.no-gutters
+                                    .col-auto
+                                        +checkmark({
+                                          radio: "coverLaminated",
+                                          text: "Да",
+                                          checked: "checked"
+                                        })
+                                    .col-auto.ml-5
+                                        +checkmark({
+                                          radio: "coverLaminated",
+                                          text: "Нет",
+                                          disable: true
+                                        })
+                            .col-12.mt-4.d-flex.justify-content-end.px-0.px-md-spc-2
+                                .quiz__btn.btn.btn_warning.js-tab-menu-subitem(data-target="#quiz1") Перейти к выбору содержания
+                                    +svg-use("arrow", "" , "16", "16")
+
+                    .tab__content#quiz1
+                        p.quiz__pretitle шаг 2:
+                        h3.title.title_md.mb-4 Вид альбома
+                        .row
+                            .col-12
+                                .subtitle.mb-2 Индивидуальная обложка
+                                .row.no-gutters
+                                    .col-12.col-md-6.col-lg-auto
+                                        .row.no-gutters.align-items-center
+                                            .col-auto
+                                                +svg-use("album-minimal", "text-primary", "48", "40")
+                                            .col-auto.ml-2
+                                                +checkmark({
+                                                  radio: "cover1Type",
+                                                  text: "Минимальная",
+                                                  checked: "checked"
+                                                })
+                                    .col-12.col-md-6.col-lg-auto.ml-lg-5.mt-2.mt-md-0
+                                        .row.no-gutters.align-items-center
+                                            .col-auto
+                                                +svg-use("album-optimal", "text-primary", "48", "40")
+                                            .col-auto.ml-2
+                                                +checkmark({
+                                                  radio: "cover1Type",
+                                                  text: "Оптимальная"
+                                                })
+                                    .col-12.col-md-6.col-lg-auto.ml-lg-5.mt-2.mt-lg-0
+                                        .row.no-gutters.align-items-center
+                                            .col-auto
+                                                +svg-use("album-maximal", "text-primary", "48", "40")
+                                            .col-auto.ml-2
+                                                +checkmark({
+                                                  radio: "cover1Type",
+                                                  text: "Максимальная"
+                                                })
+                                .subtitle.mt-4.mb-2 Дополненная реальность
+                                .row.no-gutters
+                                    .col-auto
+                                        +checkmark({
+                                          radio: "cover1Ar",
+                                          text: "Да",
+                                          checked: "checked"
+                                        })
+                                    .col-auto.ml-5
+                                        +checkmark({
+                                          radio: "cover1Ar",
+                                          text: "Нет",
+                                          disable: true
+                                        })
+                            .col-12.mt-4.d-flex.justify-content-end.px-0.px-md-spc-2
+                                .quiz__btn.btn.btn_warning.js-tab-menu-subitem(data-target="#quiz2") Перейти к выбору содержания
+                                    +svg-use("arrow", "" , "16", "16")
+
+                    .tab__content#quiz2
+                        p.quiz__pretitle шаг 3:
+                        h3.title.title_md.mb-4 Количество страниц
+                        .row
+                            .col-xl-5.mb-3.mb-xl-2
+                                .subtitle.mb-2 Количество выпускников
+                                +input-number({
+                                  caption: ""
+                                })
+                            .col-xl-7.mb-3.mb-xl-2
+                                .subtitle.mb-2 Количество разворотов с фотоисторией
+                                +input-number({
+                                  caption: ""
+                                })
+                            .col-xl-5
+                                .subtitle.mb-2 Количество альбомов
+                                +input-number({
+                                  caption: ""
+                                })
+
+                            .col-12.mt-4.d-flex.justify-content-end.px-0.px-md-spc-2
+                                .quiz__btn.btn.btn_warning.js-tab-menu-subitem(data-target="#quizDone") Готово
+                                    +svg-use("arrow", "" , "16", "16")
+
+                    .tab__content#quizDone
+                        p.quiz__pretitle Победа

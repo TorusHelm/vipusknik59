@@ -1,0 +1,51 @@
+extends ../_template
+block variables
+	- let title = 'Эконом варианты'
+
+block content
+	include ../components/input/input-number
+	include ../components/checkmark/checkmark
+	include ../modules/card/card
+	main
+		article.container.space-article.pt-0
+			.row
+				.col
+					.main-slider__wrapper
+						.swiper-container.main-slider.js-main-banner-swiper-container
+							.swiper-wrapper
+								-
+									let length = 0;
+
+								while length < 2
+									.swiper-slide.main-slider__slide(data-slider=length++)
+										picture.main-slider__slide-bg
+											img(src=`img/main-banner/main-banner${length - 1}.jpg` alt="")
+										.row
+											.col-xl-10
+												h2.main-slider__title.title Скидки на альбомы
+												.main-slider__desc % <strong>вашей скидки</strong> = количеству альбомов в заказе*
+													span.text-body
+														br/
+														br/ максимальный размер скидки 20%, цена автоматически
+														br/ формируется в корзине
+							.swiper-pagination
+						.swiper-button-prev.main-slider__btn.js-swiper-main-prev
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+						.swiper-button-next.main-slider__btn.js-swiper-main-next
+							+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+		include ../modules/get-test
+
+		include ../modules/albums-for
+
+		include ../modules/design-variants-eco
+
+		include ../modules/albums-price-eco
+
+		include ../modules/price-include-eco
+
+		include ../modules/why-us-eco
+
+		include ../modules/examples-album
+
+		include ../modules/prefooter

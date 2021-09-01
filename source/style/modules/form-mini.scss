@@ -1,0 +1,38 @@
+.form-mini {
+    padding: 32px;
+    border-radius: 16px;
+    background-color: $clean;
+    overflow: hidden;
+    position: relative;
+
+    &.success {
+        .form-mini__success {
+            display: block;
+        }
+    }
+
+    &__row {
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        line-height: 22px;
+        color: $subtitle;
+        font-weight: 400;
+    }
+
+    &__success {
+        display: none;
+        background-color: $clean;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: inherit;
+    }
+}

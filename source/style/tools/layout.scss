@@ -1,0 +1,42 @@
+.article-dirty {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: calc((50% - 50vw));
+        top: 0;
+        height: 100%;
+        width: 100vw;
+        background-color: $dirty;
+        z-index: -1;
+    }
+}
+
+.article-clean {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: calc((50% - 50vw));
+        top: 0;
+        height: 100%;
+        width: 100vw;
+        background-color: $clean;
+        z-index: -1;
+    }
+}
+
+.block-disign {
+    background: linear-gradient($clean, $dirty);
+    padding: 64px 0;
+
+    &_no-bg {
+        background: transparent;
+    }
+
+    .container {
+        position: relative;
+    }
+}

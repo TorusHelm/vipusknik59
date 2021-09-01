@@ -1,0 +1,83 @@
+//vendor
+@import './vendor/bootstrap/bootstrap';
+@import './vendor/swiper/index';
+
+//mixins
+@import '_mixins/_mixin';
+
+//tools
+@import './tools/index';
+
+//components
+@import './components/index';
+
+//modules
+@import './modules/_index';
+
+//Dfaults
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: #F7F7F7;
+  color: $dark;
+}
+
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header, footer { // для отбивки футера
+  flex: 0 0;
+}
+
+main { // для отбивки футера
+  flex: 1 0;
+}
+
+.page-wrap { // для отбивки футера
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  //padding-top: 130px; //header-gap
+  position: relative;
+  z-index: 1;
+
+  @include respondTo(max-xl) {
+    padding-top: 72px;
+  }
+
+  @supports (display:grid) {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 100%;
+  }
+}
+
+.js-modal-init {
+  cursor: pointer;
+}
+
+.js-modal-video-play {
+  pointer-events: none;
+}
+
+video {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

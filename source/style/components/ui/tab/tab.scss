@@ -1,0 +1,27 @@
+.tab {
+    &__content {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &__shelf {
+        position: absolute;
+        top: 196px;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+@import './-list';
+@import './modificators/main-page';
+@import './modificators/design';
+@import './modificators/for';

@@ -1,0 +1,61 @@
+.icon-adding {
+  &__header {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    transform-origin: center;
+    transition: transform .3s ease;
+
+    img {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &:hover {
+      transform: scale(1.33333);
+
+      + .icon-adding {
+        &__text {
+          transform: translateY(24px);
+        }
+      }
+
+      > .icon-adding__desc {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__desc {
+    opacity: 0;
+    z-index: -1;
+    padding: 12px;
+    font-size: 10px;
+    color: $clean;
+    background-color: rgba($black, 0.7);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: opacity .3s ease, z-index .3s ease;
+  }
+
+  &__text {
+    margin-top: 24px;
+    text-align: center;
+    transition: transform .3s ease;
+  }
+}

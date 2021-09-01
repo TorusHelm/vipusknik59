@@ -1,0 +1,19 @@
+.tab {
+  &_for {
+    .tab {
+      &__content {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: -1;
+
+        &.is-active {
+          z-index: 1;
+        }
+      }
+
+      &__content-outer {
+        display: grid;
+      }
+    }
+  }
+}

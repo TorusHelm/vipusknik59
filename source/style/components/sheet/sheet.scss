@@ -1,0 +1,11 @@
+.sheet {
+  background-color: $clean;
+  padding: 32px;
+  border-radius: 24px;
+
+  @include respondTo(max-md) {
+    padding: 24px;
+  }
+}
+
+@import "modificators/shadow";

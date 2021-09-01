@@ -1,0 +1,38 @@
+.alert {
+  @extend .rounded;
+  padding: 28px 32px;
+  background-color: $clean;
+  color: $primary;
+  display: flex;
+  align-items: center;
+
+  &.js-tab-menu-item {
+    cursor: pointer;
+  }
+
+  &__icon {
+    color: inherit;
+    flex: 0 0 auto;
+    transition: color .3s ease;
+
+    @at-root .alert.is-active & {
+      color: $clean !important;
+    }
+  }
+
+  &__text {
+    flex: 0 1 auto;
+    margin-left: 24px;
+    transition: color .3s ease;
+
+    @at-root .alert.is-active & {
+      color: $clean !important;
+    }
+  }
+
+  &.is-active {
+    background-color: $warning;
+  }
+}
+
+@import "warning";

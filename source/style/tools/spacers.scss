@@ -1,0 +1,156 @@
+.space-article {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include respondTo(max-lg) {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    @include respondTo(max-md) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    &_top {
+        padding-bottom: 0;
+    }
+
+    &_bottom {
+        padding-top: 0;
+    }
+
+    &_bottom-albums {
+        padding-bottom: 64px;
+
+        @include respondTo(max-lg) {
+            padding-bottom: 40px;
+        }
+
+        @include respondTo(max-md) {
+            padding-bottom: 32px;
+        }
+    }
+}
+
+.space-title {
+    margin-bottom: 40px;
+
+    @include respondTo(max-lg) {
+        margin-bottom: 32px;
+    }
+}
+.space-title-md {
+    margin-bottom: 32px;
+
+    @include respondTo(max-lg) {
+        margin-bottom: 42px;
+    }
+}
+.space-title-lg {
+    margin-bottom: 64px;
+
+    @include respondTo(max-lg) {
+        margin-bottom: 48px;
+    }
+}
+
+.space-page {
+    margin-bottom: 64px;
+
+    @include respondTo(max-lg) {
+        margin-bottom: 40px;
+    }
+
+    @include respondTo(max-md) {
+        margin-bottom: 32px;
+    }
+}
+
+.space-card-price {
+    margin-top: 32px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include respondTo(sm) {
+        margin-top: 48px;
+
+        &:nth-child(-n+2) {
+            margin-top: 0;
+        }
+    }
+
+    @include respondTo(xl) {
+        &:nth-child(-n+4) {
+            margin-top: 0;
+        }
+    }
+}
+
+.space-card-albums {
+    @include respondTo(md) {
+        margin-top: 40px;
+
+        &:nth-child(-n+2) {
+            margin-top: 0;
+        }
+    }
+
+    @include respondTo(xl) {
+        &:nth-child(-n+4) {
+            margin-top: 0;
+        }
+    }
+}
+
+.space-preference {
+    margin-top: 32px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include respondTo(md) {
+        margin-top: 40px;
+
+        &:nth-child(-n+2) {
+            margin-top: 0;
+        }
+    }
+
+    @include respondTo(lg) {
+        &:nth-child(-n+3) {
+            margin-top: 0;
+        }
+    }
+}
+
+.space-subtitle {
+    margin-bottom: 12px;
+
+    @include respondTo(md) {
+        margin-bottom: 16px;
+    }
+}
+
+.space-album-cards {
+    &:not(:first-child) {
+        margin-top: 24px;
+    }
+}
+
+.space-contacts {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include respondTo(lg) {
+        padding-top: 64px;
+    }
+
+    @include respondTo(xl) {
+        padding-top: 80px;
+        padding-bottom: 120px;
+    }
+}

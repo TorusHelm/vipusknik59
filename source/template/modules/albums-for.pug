@@ -1,0 +1,178 @@
+.js-tab-container.tab.tab_for
+    article.container.space-article.pt-0
+        h2.title.space-title Выпускные альбомы для
+        .row
+            .col-xl-4
+                .main-card.js-tab-menu-item.is-active(data-target="#typeofalbums0")
+                    picture.main-card__header
+                        img(src="img/index-card.jpg")
+                    .main-card__content
+                        .main-card__desc.subtitle Для начальной школы
+                        .main-card__btn.btn.btn_accent.btn_full.btn_static Выбрано
+            .col-xl-4
+                .main-card.js-tab-menu-item(data-target="#typeofalbums1")
+                    picture.main-card__header
+                        img(src="img/index-card1.jpg")
+                    .main-card__content
+                        .main-card__desc.subtitle Для детского сада
+                        .main-card__btn.btn.btn_accent.btn_full.btn_static Выбрано
+            .col-xl-4
+                .main-card.js-tab-menu-item(data-target="#typeofalbums2")
+                    picture.main-card__header
+                        img(src="img/index-card2.jpg")
+                    .main-card__content
+                        .main-card__desc.subtitle Для 9, 11 классов и вузов
+                        .main-card__btn.btn.btn_accent.btn_full.btn_static Выбрано
+
+    article.tab__content.container.space-article.pt-0.is-active#typeofalbums0.js-tab-container
+        .row.mb-4
+            .col-xl-6
+                .alert.js-tab-menu-item.is-active(data-target="#typeofalbums01")
+                    +svg-use("ar-album", "alert__icon", "64", "64")
+                    .alert__text.subtitle.text-primary Из чего состоит альбом <br />в стандартной AR обложке?
+            .col-xl-6
+                .alert.js-tab-menu-item(data-target="#typeofalbums02")
+                    +svg-use("personal-album", "alert__icon", "64", "64")
+                    .alert__text.subtitle.text-primary Из чего состоит альбом <br />в индивидуальной обложке?
+        .row.tab__content-outer
+            .col-12.tab__content.is-active.js-tab-container#typeofalbums01
+                .main-slider__wrapper
+                    .swiper-container.main-slider.js-main-types-swiper-container
+                        .swiper-wrapper
+                            -
+                              let lengthAgain01 = 0;
+
+                            while lengthAgain01 < 2
+                                .swiper-slide.main-slider__slide.main-slider__slide_fixed(data-slider=lengthAgain01++)
+                                    picture.main-slider__slide-bg.main-slider__slide-bg-primary
+                                    .row.no-gutters.w-100
+                                        .col-xl-6.offset-xl-1
+                                            h2.title.title_md.space-title-md!= `Что такое альбом <br />с дополненной реальностью (AR)? lengthAgain01: ${lengthAgain01}`
+                                            p.text Это альбом, где фотография «оживает» при наведении на нее камеры смартфона. <br /><br />На месте, где размещена фотография, проигрывается видео со звуком продолжительностью до 3 минут.
+                        .swiper-pagination
+                    .swiper-button-prev.main-slider__btn.js-swiper-main-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .swiper-button-next.main-slider__btn.js-swiper-main-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+            .col-12.tab__content.js-tab-container#typeofalbums02
+                .main-slider__wrapper
+                    .swiper-container.main-slider.js-main-types-swiper-container
+                        .swiper-wrapper
+                            -
+                              let lengthAgain02 = 0;
+
+                            while lengthAgain02 < 2
+                                .swiper-slide.main-slider__slide.main-slider__slide_fixed(data-slider=lengthAgain02++)
+                                    picture.main-slider__slide-bg.main-slider__slide-bg-primary
+                                    .row.no-gutters.w-100
+                                        .col-xl-6.offset-xl-1
+                                            h2.title.title_md.space-title-md!= `Что такое альбом <br />с дополненной реальностью (AR)? lengthAgain02: ${lengthAgain02}`
+                                            p.text Это альбом, где фотография «оживает» при наведении на нее камеры смартфона. <br /><br />На месте, где размещена фотография, проигрывается видео со звуком продолжительностью до 3 минут.
+                        .swiper-pagination
+                    .swiper-button-prev.main-slider__btn.js-swiper-main-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .swiper-button-next.main-slider__btn.js-swiper-main-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+    article.tab__content.container.space-article.pt-0#typeofalbums1.js-tab-container
+        .row.mb-4
+            .col-xl-6
+                .alert.js-tab-menu-item.is-active(data-target="#typeofalbums11")
+                    +svg-use("ar-album", "alert__icon", "64", "64")
+                    .alert__text.subtitle.text-primary Из чего состоит альбом <br />в стандартной AR обложке?
+            .col-xl-6
+                .alert.js-tab-menu-item(data-target="#typeofalbums12")
+                    +svg-use("personal-album", "alert__icon", "64", "64")
+                    .alert__text.subtitle.text-primary Из чего состоит альбом <br />в индивидуальной обложке?
+        .row.tab__content-outer
+            .col-12.tab__content.is-active.js-tab-container#typeofalbums11
+                .main-slider__wrapper
+                    .swiper-container.main-slider.js-main-types-swiper-container
+                        .swiper-wrapper
+                            -
+                              let lengthAgain11 = 0;
+
+                            while lengthAgain11 < 2
+                                .swiper-slide.main-slider__slide.main-slider__slide_fixed(data-slider=lengthAgain11++)
+                                    picture.main-slider__slide-bg.main-slider__slide-bg-primary
+                                    .row.no-gutters.w-100
+                                        .col-xl-6.offset-xl-1
+                                            h2.title.title_md.space-title-md!= `Что такое альбом <br />с дополненной реальностью (AR)? lengthAgain11: ${lengthAgain11}`
+                                            p.text Это альбом, где фотография «оживает» при наведении на нее камеры смартфона. <br /><br />На месте, где размещена фотография, проигрывается видео со звуком продолжительностью до 3 минут.
+                        .swiper-pagination
+                    .swiper-button-prev.main-slider__btn.js-swiper-main-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .swiper-button-next.main-slider__btn.js-swiper-main-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+            .col-12.tab__content.js-tab-container#typeofalbums12
+                .main-slider__wrapper
+                    .swiper-container.main-slider.js-main-types-swiper-container
+                        .swiper-wrapper
+                            -
+                              let lengthAgain12 = 0;
+
+                            while lengthAgain12 < 2
+                                .swiper-slide.main-slider__slide.main-slider__slide_fixed(data-slider=lengthAgain12++)
+                                    picture.main-slider__slide-bg.main-slider__slide-bg-primary
+                                    .row.no-gutters.w-100
+                                        .col-xl-6.offset-xl-1
+                                            h2.title.title_md.space-title-md!= `Что такое альбом <br />с дополненной реальностью (AR)? lengthAgain12: ${lengthAgain12}`
+                                            p.text Это альбом, где фотография «оживает» при наведении на нее камеры смартфона. <br /><br />На месте, где размещена фотография, проигрывается видео со звуком продолжительностью до 3 минут.
+                        .swiper-pagination
+                    .swiper-button-prev.main-slider__btn.js-swiper-main-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .swiper-button-next.main-slider__btn.js-swiper-main-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+    article.tab__content.container.space-article.pt-0#typeofalbums2.js-tab-container
+        .row.mb-4
+            .col-xl-6
+                .alert.js-tab-menu-item.is-active(data-target="#typeofalbums21")
+                    +svg-use("ar-album", "alert__icon", "64", "64")
+                    .alert__text.subtitle.text-primary Из чего состоит альбом <br />в стандартной AR обложке?
+            .col-xl-6
+                .alert.js-tab-menu-item(data-target="#typeofalbums22")
+                    +svg-use("personal-album", "alert__icon", "64", "64")
+                    .alert__text.subtitle.text-primary Из чего состоит альбом <br />в индивидуальной обложке?
+        .row.tab__content-outer
+            .col-12.tab__content.is-active.js-tab-container#typeofalbums21
+                .main-slider__wrapper
+                    .swiper-container.main-slider.js-main-types-swiper-container
+                        .swiper-wrapper
+                            -
+                              let lengthAgain21 = 0;
+
+                            while lengthAgain21 < 2
+                                .swiper-slide.main-slider__slide.main-slider__slide_fixed(data-slider=lengthAgain21++)
+                                    picture.main-slider__slide-bg.main-slider__slide-bg-primary
+                                    .row.no-gutters.w-100
+                                        .col-xl-6.offset-xl-1
+                                            h2.title.title_md.space-title-md!= `Что такое альбом <br />с дополненной реальностью (AR)? lengthAgain21: ${lengthAgain21}`
+                                            p.text Это альбом, где фотография «оживает» при наведении на нее камеры смартфона. <br /><br />На месте, где размещена фотография, проигрывается видео со звуком продолжительностью до 3 минут.
+                        .swiper-pagination
+                    .swiper-button-prev.main-slider__btn.js-swiper-main-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .swiper-button-next.main-slider__btn.js-swiper-main-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+
+            .col-12.tab__content.js-tab-container#typeofalbums22
+                .main-slider__wrapper
+                    .swiper-container.main-slider.js-main-types-swiper-container
+                        .swiper-wrapper
+                            -
+                              let lengthAgain22 = 0;
+
+                            while lengthAgain22 < 2
+                                .swiper-slide.main-slider__slide.main-slider__slide_fixed(data-slider=lengthAgain22++)
+                                    picture.main-slider__slide-bg.main-slider__slide-bg-primary
+                                    .row.no-gutters.w-100
+                                        .col-xl-6.offset-xl-1
+                                            h2.title.title_md.space-title-md!= `Что такое альбом <br />с дополненной реальностью (AR)? lengthAgain22: ${lengthAgain22}`
+                                            p.text Это альбом, где фотография «оживает» при наведении на нее камеры смартфона. <br /><br />На месте, где размещена фотография, проигрывается видео со звуком продолжительностью до 3 минут.
+                        .swiper-pagination
+                    .swiper-button-prev.main-slider__btn.js-swiper-main-prev
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+                    .swiper-button-next.main-slider__btn.js-swiper-main-next
+                        +svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')

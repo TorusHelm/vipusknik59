@@ -1,0 +1,13 @@
+.link {
+    color: $link;
+    //font-size: 14px;
+    //line-height: 18px;
+    text-decoration: none;
+    transition: color .3s ease;
+    cursor: pointer;
+}
+
+@import './modificators/inline';
+@import './modificators/hide';
+@import './modificators/bold';
+@import './modificators/warning';

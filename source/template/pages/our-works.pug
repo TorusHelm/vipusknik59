@@ -1,0 +1,118 @@
+extends ../_template
+block variables
+	- let title = 'Главная'
+
+block content
+	include ../components/input/input-number
+	include ../components/checkmark/checkmark
+	include ../modules/card/card
+	main
+		article.container.space-article
+			h2.title.space-title Наши работы
+			.row.js-tab-container.tab.tab_main-page
+				.col-12
+					ul.tab-list
+						li.tab-list__item.js-tab-menu-item.is-active(data-target="#example0")
+							h4.tab-list__title Детский сад
+						li.tab-list__item.js-tab-menu-item(data-target="#example1")
+							h4.tab-list__title Начальная школа
+						li.tab-list__item.js-tab-menu-item(data-target="#example2")
+							h4.tab-list__title 9-11 классы
+
+				.col-12
+					.tab__content.is-active#example0
+						.row
+							.col-xl-3.space-card-albums
+								.test-block.js-modal-init.js-modal-slider(data-target="#works" data-id=3)
+							.col-xl-3.space-card-albums
+								.test-block.js-modal-init.js-modal-slider(data-target="#works" data-id=6)
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+					.tab__content#example1
+						.row
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+					.tab__content#example2
+						.row
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+							.col-xl-3.space-card-albums
+								.test-block
+				.col-auto.mt-5.mx-auto
+					button.btn.btn_warning.btn_lg Загрузить еще
+
+		+modal('works')(data-slider="true")
+			.container
+				.row.justify-content-center
+					.col-12.col-xl-10
+						.modal-container.modal-container_no-space.modal-container_no-bg
+							.modal__close.js-modal-close
+								+svg-use('close-modal')
+							.main-slider__wrapper
+								.swiper-container.main-slider.js-main-swiper-modal
+									.swiper-wrapper
+
+								.swiper-button-prev.main-slider__btn.js-modal-swiper-prev
+									+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')
+								.swiper-button-next.main-slider__btn.js-modal-swiper-next
+									+svg-use('slider-arrow', 'main-banner__arrow', '12.068', '26.219')

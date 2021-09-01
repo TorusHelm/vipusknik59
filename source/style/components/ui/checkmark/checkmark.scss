@@ -1,0 +1,67 @@
+.checkmark {
+    $root: #{&};
+
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    color: $dark;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &.disabled {
+        pointer-events: none;
+        color: $border-case2;
+
+        .checkmark {
+            &__mark {
+                background-color: $border;
+            }
+        }
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        visibility: hidden;
+
+        &:checked ~ {
+            #{$root}__mark {
+                background-color: $primary;
+                border-color: $primary;
+
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__mark {
+        height: 24px;
+        width: 24px;
+        background-color: transparent;
+        transition: background-color .3s ease, border-color .3s ease;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+        border: 1px solid $border-case2;
+
+        &:before {
+            content: '';
+            width: 14.121px;
+            height: 11.182px;
+            display: block;
+            opacity: 0;
+            color: $clean;
+            background: url('../img/check.svg');
+            transition: opacity .3s ease;
+        }
+    }
+}

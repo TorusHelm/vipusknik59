@@ -1,0 +1,21 @@
+mixin card-album(data)
+    .card-album.row.no-gutters&attributes(attributes)
+        .col-lg-4.position-static
+            .card-album__image.js-modal-init.js-modal-slider(data-target=data.modal data-id=data.id)
+                img(src=data.slides[0], alt="")
+                .card-album__fullscreen
+                .card-album__image-hover Посмотреть примеры <br>альбомов
+        .col-lg-8.position-static
+            .card-album__content
+                a(href="#").btn.btn_warning.btn_download.card-album__psd
+                h3.card-album__title.subtitle!= data.title
+                .card-album__price
+                    p.caption Стоимость альбома
+                    h4!= data.price + ' ₽'
+                .card-album__desc!= data.desc
+                ul.card-album__list
+                    each itemList in data.list
+                        li.card-album__list-item!= itemList
+                .card-album__btn-set
+                    a(href="/calculate.html").btn.btn_warning Рассчитать стоимость
+                    a(href="#").btn Создать в Онлайн-редакторе

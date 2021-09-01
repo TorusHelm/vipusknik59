@@ -1,0 +1,15 @@
+.btn {
+  &_primary {
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover {
+      background-color: rgba($primary, 0.8);
+      border-color: transparent;
+    }
+
+    &:focus {
+      box-shadow: $btn-focus rgba($primary, 0.4);
+    }
+  }
+}

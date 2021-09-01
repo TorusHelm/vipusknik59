@@ -1,0 +1,25 @@
+extends ../_template
+block variables
+	- let title = 'Главная'
+
+block content
+	include ../components/input/input-number
+	include ../components/checkmark/checkmark
+	include ../modules/card/card
+	main
+		article.container.space-article
+			h2.title.space-title Акции
+			.row.action-card__set
+				-
+					let length = 0;
+				while length < 9
+					.col-md-6.col-xl-4.action-card__wrapper(data-count=length++)
+						.action-card
+							picture.action-card__header
+								img(src="" style="background: gray;")
+							.action-card__content
+								.action-card__title Название акции
+								.action-card__desc Работаем для Вас 7 лет. Заключаем договор, предоставляем чеки, соблюдаем сроки.
+			.row
+				.col-auto.mt-5.mx-auto
+					button.btn.btn_warning.btn_lg Загрузить еще

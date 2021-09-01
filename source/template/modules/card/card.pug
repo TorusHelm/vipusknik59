@@ -1,0 +1,38 @@
+include ../../components/input/input
+
+-
+    inputData = {
+        caption: 'Кол-во альбомов',
+        type: 'number',
+        value: '1',
+        postfix: 'шт.',
+    };
+
+mixin card(item, prefooter=false)
+    if ( prefooter )
+        .card.card_prefooter
+            .card__header
+                picture
+                    img(src=item.img, alt=item.title)
+            .card__content
+                h3.card__title!= item.title
+                p.card__desc!= item.desc
+                a(href=item.href).card__btn.btn.btn_full.btn_primary.btn_thin!= item.btnText
+
+    else
+        .card
+            a(href="/albums.html").card__header
+                picture
+                    img(src=item.img, alt=item.title)
+            .card__content
+                h3.card__title!= item.title
+                ul.card__list
+                    each itemList in item.list
+                        li.card__list-item!= itemList
+            .card__footer.js-card-price-wrapper
+                +input(inputData)(class="input_xl-half js-card-price")
+                .card__price
+                    p.caption Стоимость альбома
+                    h4.js-card-price-output(data-price=item.price)!= item.price + ' ₽'
+                a(href="/calculate.html").btn.btn_full.btn_warning Рассчитать стоимость
+                a(href="/albums.html").btn.btn_full.btn_thin Подробнее

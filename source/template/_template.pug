@@ -1,0 +1,171 @@
+block variables
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(content="" name="author")
+		meta(content="" name="description")
+		meta(content="" name="keywords")
+		meta(content="width=device-width, initial-scale=1" name="viewport")
+		meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet")
+		//- favicon block start
+		link(rel="shrtcut icon" type="image/ico" href="img/favicon.ico")
+		//- favicon block end
+
+		link(rel='stylesheet' href='css/libs.css')
+		link(rel='stylesheet' href='css/app.css')
+
+		//- <!--[if lt IE 9]>
+		//- script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+		//- <![endif]-->
+		block head
+
+	body
+
+		include common/svg-use
+		include ./modules/modal/modal
+		include ./components/input/input
+
+		.page-wrap.js-page-wrap
+			include ./parts/header
+			block content
+			include ./parts/footer
+
+		-
+			let input1 = {
+				caption: 'Представьтесь, пожалуйста',
+				type: 'text',
+				value: '',
+				postfix: '',
+				placeholder: '',
+				name: 'name',
+				require: true
+			};
+
+			let input2 = {
+				caption: 'Телефон',
+				type: 'tel',
+				value: '',
+				postfix: '',
+				placeholder: '',
+				name: 'phone',
+				require: true
+			};
+
+		+modal('getCall')
+			.container
+				.row.justify-content-center
+					.col-lg-6
+						form.modal-container.js-form-validate(novalidate)
+							.modal__close.js-modal-close
+								+svg-use('close-modal')
+							.modal-container__title Перезвонить вам?
+							.row.modal-container__fields
+								.col-md-6
+									+input(input1).js-form-validate-input
+								.col-md-6.mt-3.mt-md-0
+									+input(input2).js-form-validate-input
+								.col-md-6.mt-4.mt-md-5
+									button.btn.btn_warning.btn_full(type="submit") Отправить
+							.row.modal-container__success
+								.col-12
+									p.modal-container__desc Спасибо за&nbsp;Ваше обращение! Мы&nbsp;рассмотрим Вашу заявку в&nbsp;ближайшее время и&nbsp;перезвоним по&nbsp;указанному номеру.
+								.col-md-6.mt-4.mt-md-5
+									button.btn.btn_warning.btn_full.js-modal-close.js-form-calc-reset(type="button") Ок, спасибо
+
+		+modal('confidential')
+			.container
+				.row.justify-content-center
+					.col-lg-6
+						.modal-container
+							.modal__close.js-modal-close
+								+svg-use('close-modal')
+							.modal-container__title Политика конфиденциальности
+							p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+
+		+modal('agreement')
+			.container
+				.row.justify-content-center
+					.col-lg-6
+						.modal-container
+							.modal__close.js-modal-close
+								+svg-use('close-modal')
+							.modal-container__title Пользовательское соглашение
+							p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+
+		+modal('pay')
+			.container
+				.row.justify-content-center
+					.col-lg-6
+						.modal-container
+							.modal__close.js-modal-close
+								+svg-use('close-modal')
+							.modal-container__title Оплата и доставка
+							p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+
+		+modal('return')
+			.container
+				.row.justify-content-center
+					.col-lg-6
+						.modal-container
+							.modal__close.js-modal-close
+								+svg-use('close-modal')
+							.modal-container__title Возврат
+							p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+								<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto pariatur minus commodi placeat labore illo enim. Dolorem enim sunt, eius cumque dolor deleniti, quo numquam illo, consequatur sed cupiditate animi.
+
+		block scripts
+			script(src='js/libs.js' defer)
+			script(src='js/app.js' defer)

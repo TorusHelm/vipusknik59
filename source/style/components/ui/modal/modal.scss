@@ -1,0 +1,131 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 20;
+    backdrop-filter: blur(20px);
+    background-color: rgba($dark, 0.5);
+    transition: backdrop-filter .3s ease;
+    padding: 8vh 0 0;
+    max-height: 100vh;
+    overflow: auto;
+
+    @supports (not (backdrop-filter: blur())) {
+        background-color: rgba($dark, 0.5);
+    }
+
+    &.is-active {
+        display: flex;
+    }
+
+    > .container {
+        max-height: 100%;
+    }
+
+    &__close {
+        top: 40px;
+        right: 40px;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        z-index: 2;
+        user-select: none;
+
+        @include respondTo(max-md) {
+            top: 24px;
+            right: 16px;
+            height: 24px;
+            width: 24px;
+        }
+
+        svg {
+            display: block;
+            color: #b8b8b8;
+        }
+    }
+}
+
+.modal-container {
+    $root: #{&};
+
+    padding: 40px;
+    background-color: $clean;
+    box-shadow: $modal-shadow;
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 8vh;
+
+    figcaption {
+        background-color: $clean;
+        color: $dark;
+        padding: 16px 24px;
+        display: block;
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    @include respondTo(max-md) {
+        padding: 24px 16px;
+    }
+
+    &_no-space {
+        padding: 0;
+
+        .modal__close {
+            right: 8px;
+            top: 8px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: $clean;
+            padding: 10px;
+
+            svg {
+                color: $link;
+            }
+        }
+    }
+
+    &_no-bg {
+        background-color: transparent;
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 40px;
+        padding-right: 32px;
+
+        @include respondTo(max-md) {
+            margin-bottom: 24px;
+            font-size: 28px;
+            line-height: 32px;
+        }
+    }
+
+    &__desc {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 0;
+    }
+
+    &__success {
+        display: none;
+    }
+
+    &.success {
+        #{$root}__fields {
+            display: none;
+        }
+
+        #{$root}__success {
+            display: block;
+        }
+    }
+}

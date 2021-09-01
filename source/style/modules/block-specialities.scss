@@ -1,0 +1,24 @@
+.block-specialities {
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 110px;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 1920px;
+    max-width: 100vw;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom right;
+    }
+  }
+}

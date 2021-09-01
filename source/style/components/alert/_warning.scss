@@ -1,0 +1,6 @@
+.alert {
+  &_warning {
+    color: $clean;
+    background-color: $warning;
+  }
+}

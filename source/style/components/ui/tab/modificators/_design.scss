@@ -1,0 +1,45 @@
+.tab {
+    &_design {
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+
+            img {
+                display: block;
+                max-width: 100%;
+                flex: 0 0 auto;
+            }
+        }
+
+        .swiper-button {
+            position: absolute;
+            top: 50%;
+            margin: 0;
+            transform: translateY(-50%);
+
+            &.swiper-button-prev {
+                left: 0;
+            }
+
+            &.swiper-button-next {
+                right: 0;
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+
+        .tab {
+            &__shelf {
+                top: 220px;
+            }
+        }
+
+        .swiper-container {
+            padding: 40px 30px 20px;
+        }
+    }
+}
